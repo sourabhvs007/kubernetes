@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ruby-blog-db
+  labels:
+    name: ruby-blog-db
+    env: staging
+spec:
+  ports:
+    - port: 5432
+      name: ruby-blog-db
+      targetPort: 5432
+  selector:
+    name: ruby-blog-db
+    env: staging

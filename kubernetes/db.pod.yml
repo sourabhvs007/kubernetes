@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ruby-blog-db
+  labels:
+    name: ruby-blog-db
+    env: staging
+spec:
+  containers:
+    - name: ruby-blog-db
+      image: postgres
+      ports: 
+        - containerPort: 5432
+          protocol: TCP

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: ruby-blog-app
+  labels:
+    name: ruby-blog-app
+    env: staging
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        name: ruby-blog-app
+    spec:
+      containers:
+        - name: ruby-blog-container
+          image: sourabhvs007/ruby-blog:v1
+          ports:
+            - containerPort: 80
+          env:
+            - name: RUBY-BLOG-DB-HOST
+              value: "ruby-blog-db"

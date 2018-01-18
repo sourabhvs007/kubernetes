@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: ruby-blog-app
+  labels:
+    name: ruby-blog-app
+    env: staging
+spec:
+  containers:
+    - name: ruby-blog-container
+      image: sourabhvs007/ruby-blog:v1
+      ports:
+        - containerPort: 80
+      env:
+        - name: RUBY-BLOG-DB-HOST
+          value: "ruby-blog-db"

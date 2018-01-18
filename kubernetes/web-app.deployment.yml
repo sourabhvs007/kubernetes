@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ruby-blog-app
+  labels:
+    name: ruby-blog-app
+    env: staging 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: ruby-blog-ap
+  template:
+    metadata:
+      labels:
+        name: ruby-blog-ap
+    spec:
+      containers:
+        - name: ruby-blog-container
+          image: sourabhvs007/ruby-blog:v1
+          ports:
+            - containerPort: 80
+          env:
+            - name: VERSION
+              value: v2
