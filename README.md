@@ -18,4 +18,4 @@ Solution : Give the host an environment variable ( database.yml ) pointing to th
 
 4 ) Check deployment mechanism ( pushing new docker image to registry and deploying the changes to the pods ) .  Done
 
-NOTE : Always use kind: deployment in kubernetes as it takes care of replication and pod management . no need to create pods independently . ( use case for individual pod creation is for testing purpose only )
+NOTE : Always use kind: deployment in kubernetes as it takes care of replication and pod management . no need to create pods independently . ( use case for individual pod creation is for testing purpose only ) .
